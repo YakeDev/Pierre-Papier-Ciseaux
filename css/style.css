@@ -16,9 +16,9 @@ body {
   background-color: #ffffff;
   box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.13), 0 1px 4px 0 rgba(0, 0, 0, 0.11);
   /* border: 1px solid #474bff; */
-  width: 380px;
-  padding: 40px;
-  border-radius: 16px;
+  width: 450px;
+  padding: 50px;
+  border-radius: 35px;
 }
 
 .game-header {
@@ -34,13 +34,15 @@ body {
 }
 
 .round-title {
+  background-color: #474bff;
   border: 0px solid #474bff;
   border-radius: 8px;
   width: 150px;
   margin: auto;
+  padding: 2px 4px;
 }
 .round-title h4 {
-  color: #474bff;
+  color: #ffffff;
   line-height: 0em;
   font-size: 1.2em;
 }
@@ -53,11 +55,11 @@ body {
 
 .human-selection img {
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid rgba(71, 74, 255, 0.6);
   padding: 15px;
   box-shadow: 0px 3px 6px 0px rgba(140, 149, 159, 0.15);
-  cursor: pointer;
+  cursor: auto;
   transition: cubic-bezier(0.19, 1, 0.22, 1);
 }
 .human-selection img:hover {
@@ -105,16 +107,18 @@ img {
   justify-content: center;
   font-size: 18px;
   font-weight: bold;
+  border-radius: 5px;
   border: 1px solid rgba(71, 74, 255);
   padding: 2px;
 }
 
 .ruler {
+  border-radius: 15px;
   border: 1.5px solid rgba(71, 74, 255);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
-.game-ruler p {
+.ruler-text {
   font-size: 13px;
   font-style: italic;
   /* color: rgb(133, 133, 133); */
@@ -140,9 +144,51 @@ button {
 button.btn-new-game {
   background-color: #474bff;
   color: #ffffff;
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+  /* cursor: auto; */
 }
+button.btn-new-game:hover {
+  box-shadow: 0px 8px 16px 0px rgba(71, 75, 255, 0.5);
+  cursor: pointer;
+}
+
 button.btn-cancel {
   border: 1.7px solid #474bff;
   color: #474bff;
-  ba
+}
+button.btn-cancel:hover {
+  box-shadow: 0px 8px 16px 0px rgba(71, 75, 255, 0.5);
+  cursor: pointer;
+}
+
+/************ gagner**************/
+.tieMatch {
+  color: hsl(239, 100%, 64%);
+  line-height: 1.2em;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+.winMatch {
+  color: hsl(115, 100%, 43%);
+  line-height: 1.2em;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+.loseMatch {
+  color: hsl(0, 100%, 64%);
+  line-height: 1.2em;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*8********8* Object Begin******************/
+.object-begin {
+  opacity: 0.2;
+}
+
+.game-begin {
+  opacity: 1;
 }

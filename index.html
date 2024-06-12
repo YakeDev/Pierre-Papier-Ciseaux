@@ -13,44 +13,64 @@
           <h2 class="game-title">Rock, Paper or Scissor ?</h2>
           <div class="human-selection">
             <div class="selection-1">
-              <img src="img/Rock.png" alt="" srcset="" />
+              <img
+                src="img/ROCK.png"
+                alt=""
+                srcset=""
+                class="human-selection-1"
+              />
             </div>
             <div class="selection-2">
-              <img src="img/Paper.png" alt="" srcset="" />
+              <img
+                src="img/PAPER.png"
+                alt=""
+                srcset=""
+                class="human-selection-2"
+              />
             </div>
             <div class="selection-3">
-              <img src="img/Scissor.png" alt="" srcset="" />
+              <img
+                src="img/SCISSOR.png"
+                alt=""
+                srcset=""
+                class="human-selection-3"
+              />
             </div>
           </div>
           <div class="round-title">
-            <h4>Round: <span class="game-round">0</span>/5</h4>
+            <h4>Round: <span class="game-round" id="game-round"></span></h4>
           </div>
         </div>
 
         <div class="game-body">
           <div class="human-choice">
             <p>YOU</p>
-            <img src="img/Rock.png" alt="" srcset="" />
-            <p class="p-score">SCORE: <span class="human-choice">0</span></p>
+            <img src="img/ROCK.png" alt="" srcset="" id="human-choice-object" />
+            <p class="p-score">SCORE: <span id="human-score"> 0</span></p>
           </div>
           <div><h1 class="">-</h1></div>
           <div class="computer-choice">
             <p>COMPUTER</p>
-            <img src="img/Scissor.png" alt="" srcset="" />
-            <p class="p-score">SCORE: <span class="computer-choice">0</span></p>
+            <img
+              src="img/SCISSOR.png"
+              alt=""
+              srcset=""
+              id="computer-choice-object"
+            />
+            <p class="p-score">SCORE: <span id="computer-score"> 0</span></p>
           </div>
         </div>
         <!-- <hr class="separateur" /> -->
         <div class="game-ruler">
           <div class="ruler">
-            <p>
+            <p class="ruler-text">
               The stone breaks the scissor, the scissor cuts the paper, the
               paper covers the stone and if you throw the same object, it's all
               the same.
             </p>
           </div>
           <div class="game-button">
-            <button type="button" class="btn-cancel">Cancel</button>
+            <button type="button" class="btn-cancel">Reset</button>
             <button type="button" class="btn-new-game">New game</button>
           </div>
         </div>
