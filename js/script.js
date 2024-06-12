@@ -65,4 +65,4 @@ function palyGame() {
   }
 }
 
-palyGame();
+// palyGame();
