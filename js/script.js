@@ -24,6 +24,10 @@ let humanSelection1 = document.querySelector(".human-selection-1");
 let humanSelection2 = document.querySelector(".human-selection-2");
 let humanSelection3 = document.querySelector(".human-selection-3");
 
+//images links
+const imgLink =
+  "https://raw.githubusercontent.com/YakeDev/Pierre-Papier-Ciseaux/main/img/";
+
 //choice
 let humanChoiceElement = document.querySelector("#human-choice-object");
 let computerChoiceElement = document.querySelector("#computer-choice-object");
@@ -122,8 +126,8 @@ function playGame() {
 
   playRound(humanChoice, computerChoice);
   getComputerChoice();
-  humanChoiceElement.src = `img/${humanChoice}.png`;
-  computerChoiceElement.src = `img/${computerChoice}.png`;
+  humanChoiceElement.src = `${imgLink}${humanChoice}.png`;
+  computerChoiceElement.src = `${imgLink}${computerChoice}.png`;
 
   //score
   humanScore.innerHTML = ` ${hScore}`;
