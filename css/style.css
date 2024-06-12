@@ -50,7 +50,7 @@ body {
 .human-selection {
   display: flex;
   justify-content: space-around;
-  margin: 40px 0px;
+  margin: 20px 0px 20px 0px;
 }
 
 .human-selection img {
@@ -85,19 +85,20 @@ img {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background-color: hsla(240, 100%, 98%, 0.5);
+  padding: 0 30px;
+  border-radius: 15px;
 }
 .computer-choice {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: justify;
+  background-color: hsla(240, 100%, 98%, 0.5);
+  padding: 0 30px;
+  border-radius: 15px;
 }
-/* .computer-choice {
-  border: 1px solid rgba(71, 74, 255, 0.344);
-}
-.human-choice {
-  border: 1px solid rgba(71, 74, 255, 0.344);
-} */
+
 .game-body p {
   font-size: 12px;
   font-weight: 500;
@@ -109,19 +110,19 @@ img {
   font-weight: bold;
   border-radius: 5px;
   border: 1px solid rgba(71, 74, 255);
-  padding: 2px;
+  padding: 2px 5px;
 }
 
 .ruler {
   border-radius: 15px;
   border: 1.5px solid rgba(71, 74, 255);
-  margin-bottom: 20px;
+  margin: 40px 0px 20px 0px;
+  padding: 10px;
 }
 
 .ruler-text {
   font-size: 13px;
   font-style: italic;
-  /* color: rgb(133, 133, 133); */
   text-align: center;
   line-height: 1.3em;
 }

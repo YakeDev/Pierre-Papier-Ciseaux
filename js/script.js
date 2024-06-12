@@ -1,3 +1,10 @@
+/**
+ * Project by YakeDev
+ *
+ *
+ *
+ */
+
 //Object begin
 let objectBegin = document.querySelectorAll(".object-begin");
 
