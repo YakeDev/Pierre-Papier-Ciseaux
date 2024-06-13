@@ -1,8 +1,6 @@
 /**
  * Project by YakeDev
  *
- *
- *
  */
 
 //Object begin
@@ -10,6 +8,9 @@ let objectBegin = document.querySelectorAll(".object-begin");
 
 //Audio
 const audio = document.getElementById("audio");
+const audioWin = document.getElementById("audio-win");
+const audioFireWork = document.getElementById("audio-firework");
+const audioLose = document.getElementById("audio-lose");
 
 //score
 let rulerText = document.querySelector(".ruler-text");
@@ -54,6 +55,8 @@ function win() {
   compteurRound = 0;
 
   firework();
+  audioFireWork.play();
+  audioWin.play();
 }
 
 function tie() {
@@ -70,6 +73,8 @@ function lose() {
   compteurRound = 0;
   hScore = 0;
   cScore = 0;
+
+  audioLose.play();
 }
 
 /**
@@ -77,7 +82,7 @@ function lose() {
  */
 
 function firework() {
-  const duration = 15 * 500,
+  const duration = 15 * 700,
     animationEnd = Date.now() + duration,
     defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
