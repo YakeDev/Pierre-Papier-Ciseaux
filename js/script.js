@@ -47,12 +47,22 @@ let humanSelection = 0;
 let computerChoice = 0;
 let humanChoice;
 
+//Object begin
+function objectBeginOpacity() {
+  humanChoiceElement.className = "object-begin";
+  computerChoiceElement.className = "object-begin";
+}
+
 //game result
 function win() {
   // console.log(`Felicitation, vous avez gagné 🏆🏆 avec un score de `);
   rulerText.innerHTML = "Congratulations, you've won 🏆";
   rulerText.className = "winMatch";
   compteurRound = 0;
+  hScore = 0;
+  cScore = 0;
+
+  objectBeginOpacity();
 
   firework();
   audioFireWork.play();
@@ -64,16 +74,20 @@ function tie() {
   rulerText.innerHTML = "Woow!! Tie score 🤪🤪";
   rulerText.className = "tieMatch";
   compteurRound = 0;
-}
-
-function lose() {
-  // console.log(`Desolé, vous avez perdu 😫😫😫 `);
-  rulerText.innerHTML = "Try again, you lost 😫😫😫";
-  rulerText.className = "loseMatch";
-  compteurRound = 0;
   hScore = 0;
   cScore = 0;
 
+  objectBeginOpacity();
+}
+
+function lose() {
+  compteurRound = 0;
+  hScore = 0;
+  cScore = 0;
+  rulerText.innerHTML = "Try again, you lost 😫😫😫";
+  rulerText.className = "loseMatch";
+
+  objectBeginOpacity();
   audioLose.play();
 }
 
@@ -131,15 +145,6 @@ function getComputerChoice() {
   }
 }
 
-// function getHumanChoice() {
-//   if (humanChoice === 1) {
-//     return "ROCK";
-//   } else if (humanChoice === 2) {
-//     return "PAPER";
-//   } else {
-//     return "SCISSOR";
-//   }
-// }
 function reset() {
   //Reset game
   compteurRound = 0;

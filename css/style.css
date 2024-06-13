@@ -13,9 +13,9 @@ body {
 }
 
 .game-container {
-  background-color: #ffffff;
+  background-color: hsla(0, 0%, 100%, 0.935);
   box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.13), 0 1px 4px 0 rgba(0, 0, 0, 0.11);
-  /* border: 1px solid #474bff; */
+
   width: 450px;
   padding: 50px;
   border-radius: 35px;
@@ -197,7 +197,7 @@ button.btn-cancel:hover {
 
 /***************** Media Query *****************/
 
-@media (400px <= width <= 600px) {
+@media (200px <= width <= 600px) {
   .game-container {
     width: 70%;
     padding: 40px;
@@ -208,9 +208,10 @@ button.btn-cancel:hover {
     font-size: 1.5em;
     width: 100%;
     margin: auto;
+    justify-content: space-between;
   }
   .human-selection img {
-    height: 45px;
+    height: 30px;
   }
 
   .human-choice,
@@ -220,5 +221,15 @@ button.btn-cancel:hover {
   .ruler {
     margin: 20px 0px 20px 0px;
     padding: 0px 10px;
+  }
+
+  button {
+    padding: 5px 20px;
+    font-size: 12px;
+  }
+
+  button.btn-new-game {
+    border: 1.7px solid #474bff;
+    /* cursor: auto; */
   }
 }
