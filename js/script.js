@@ -8,6 +8,9 @@
 //Object begin
 let objectBegin = document.querySelectorAll(".object-begin");
 
+//Audio
+const audio = document.getElementById("audio");
+
 //score
 let rulerText = document.querySelector(".ruler-text");
 let humanScore = document.getElementById("human-score");
@@ -46,9 +49,11 @@ let humanChoice;
 //game result
 function win() {
   // console.log(`Felicitation, vous avez gagné 🏆🏆 avec un score de `);
-  rulerText.innerHTML = "Congratulations, you've won 🏆🏆";
+  rulerText.innerHTML = "Congratulations, you've won 🏆";
   rulerText.className = "winMatch";
   compteurRound = 0;
+
+  firework();
 }
 
 function tie() {
@@ -65,6 +70,44 @@ function lose() {
   compteurRound = 0;
   hScore = 0;
   cScore = 0;
+}
+
+/**
+ * Fire work
+ */
+
+function firework() {
+  const duration = 15 * 500,
+    animationEnd = Date.now() + duration,
+    defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  const interval = setInterval(function () {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    const particleCount = 50 * (timeLeft / duration);
+
+    // since particles fall down, start a bit higher than random
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      })
+    );
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      })
+    );
+  }, 250);
 }
 
 /**
@@ -92,6 +135,23 @@ function getComputerChoice() {
 //     return "SCISSOR";
 //   }
 // }
+function reset() {
+  //Reset game
+  compteurRound = 0;
+  hScore = 0;
+  cScore = 0;
+
+  gameRound.innerHTML = `${compteurRound}/5`;
+  humanScore.innerHTML = ` ${hScore}`;
+  computerScore.innerHTML = ` ${cScore}`;
+
+  rulerText.innerHTML = `The stone breaks the scissor, the scissor cuts the paper, the
+              paper covers the stone and if you throw the same object, it's all
+              the same.`;
+  rulerText.className = "ruler-text";
+  humanChoiceElement.className = "object-begin";
+  computerChoiceElement.className = "object-begin";
+}
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
@@ -126,8 +186,8 @@ function playGame() {
 
   playRound(humanChoice, computerChoice);
   getComputerChoice();
-  humanChoiceElement.src = `${imgLink}${humanChoice}.png`;
-  computerChoiceElement.src = `${imgLink}${computerChoice}.png`;
+  humanChoiceElement.src = `img/${humanChoice}.png`;
+  computerChoiceElement.src = `img/${computerChoice}.png`;
 
   //score
   humanScore.innerHTML = ` ${hScore}`;
@@ -150,18 +210,21 @@ function playGame() {
 
 //Get Human choice
 humanSelection1.addEventListener("click", function () {
+  audio.play();
   compteurRound++;
   humanChoice = "ROCK";
   playGame();
 });
 
 humanSelection2.addEventListener("click", function () {
+  audio.play();
   compteurRound++;
   humanChoice = "PAPER";
   playGame();
 });
 
 humanSelection3.addEventListener("click", function () {
+  audio.play();
   compteurRound++;
   humanChoice = "SCISSOR";
   playGame();
@@ -174,18 +237,5 @@ newGame.addEventListener("click", function () {
 
 // Reset Game
 resetGame.addEventListener("click", function () {
-  compteurRound = 0;
-  hScore = 0;
-  cScore = 0;
-
-  gameRound.innerHTML = `${compteurRound}/5`;
-  humanScore.innerHTML = ` ${hScore}`;
-  computerScore.innerHTML = ` ${cScore}`;
-
-  rulerText.innerHTML = `The stone breaks the scissor, the scissor cuts the paper, the
-              paper covers the stone and if you throw the same object, it's all
-              the same.`;
-  rulerText.className = "ruler-text";
-  humanChoiceElement.className = "object-begin";
-  computerChoiceElement.className = "object-begin";
+  reset();
 });
