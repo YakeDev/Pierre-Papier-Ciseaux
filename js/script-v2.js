@@ -1,3 +1,7 @@
+console.log("----------------------------");
+console.log("------ By YakeDev ----------");
+console.log("----------------------------");
+
 class Game {
   constructor() {
     this._humChoice = null;
@@ -62,7 +66,6 @@ class Game {
   playRound() {
     switch (true) {
       case this._humChoice === this._compChoice:
-        console.log("It's a tie!");
         this.rulerText.textContent = "It's a tie!";
         break;
 
@@ -70,13 +73,11 @@ class Game {
       case this._humChoice === "PAPER" && this._compChoice === "ROCK":
       case this._humChoice === "SCISSOR" && this._compChoice === "PAPER":
         this.hScore++;
-        console.log("Player1 wins this round!");
         this.rulerText.textContent = "Player1 wins this round!";
         break;
 
       default:
         this.cScore++;
-        console.log("Computer wins this round!");
         this.rulerText.textContent = "Computer wins this round!";
     }
   }
@@ -141,15 +142,6 @@ class Game {
           this.showPlayersChoice();
           this.showPlayersScore();
           this.showRound();
-
-          console.log(`GAME ROUND: ${this.gameRound}`);
-          console.log("----------------------------");
-          console.log(`Human: ${this._humChoice}`);
-          console.log(`Computer: ${this._compChoice}`);
-          console.log("----------------------------");
-          console.log(`Human score: ${this.hScore}`);
-          console.log(`Computer score: ${this.cScore}`);
-          console.log("=======================================");
 
           if (this.gameRound >= 5) {
             this.gameActive = false;
