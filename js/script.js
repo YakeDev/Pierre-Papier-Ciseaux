@@ -55,7 +55,6 @@ function objectBeginOpacity() {
 
 //game result
 function win() {
-  // console.log(`Felicitation, vous avez gagné 🏆🏆 avec un score de `);
   rulerText.innerHTML = "Congratulations, you've won 🏆";
   rulerText.className = "winMatch";
   compteurRound = 0;
