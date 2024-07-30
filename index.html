@@ -17,7 +17,7 @@
                 src="img/ROCK.png"
                 alt=""
                 srcset=""
-                class="human-selection-1"
+                class="human-selection-1 human-choice"
               />
             </div>
             <div class="selection-2">
@@ -25,7 +25,7 @@
                 src="img/PAPER.png"
                 alt=""
                 srcset=""
-                class="human-selection-2"
+                class="human-selection-2 human-choice"
               />
             </div>
             <div class="selection-3">
@@ -33,12 +33,12 @@
                 src="img/SCISSOR.png"
                 alt=""
                 srcset=""
-                class="human-selection-3"
+                class="human-selection-3 human-choice"
               />
             </div>
           </div>
           <div class="round-title">
-            <h4>Round: <span class="game-round" id="game-round"></span></h4>
+            <h4>Round: <span class="game-round" id="game-round">0</span>/5</h4>
           </div>
         </div>
 
@@ -64,8 +64,7 @@
         <div class="game-ruler">
           <div class="ruler">
             The stone breaks the scissor, the scissor cuts the paper, the paper
-            covers the stone and if you throw the same object, it's all the
-            same.
+            covers the stone. If both throw the same object, it's a tie.
           </div>
           <div class="game-button">
             <button type="button" class="btn-cancel">Reset</button>
