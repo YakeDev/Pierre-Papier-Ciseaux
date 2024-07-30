@@ -12,6 +12,10 @@ body {
   align-items: center;
 }
 
+.game-title {
+  text-transform: uppercase;
+}
+
 .game-container {
   background-color: hsla(0, 0%, 100%, 0.935);
   box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.13), 0 1px 4px 0 rgba(0, 0, 0, 0.11);
@@ -89,16 +93,7 @@ img {
   background-color: hsla(240, 100%, 98%, 0.5);
   padding: 0 20px;
   border-radius: 15px;
-} /*
-.computer-choice {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: justify;
-  background-color: hsla(240, 100%, 98%, 0.5);
-  padding: 0 30px;
-  border-radius: 15px;
-} */
+}
 
 .game-body p {
   font-size: 12px;
@@ -115,10 +110,12 @@ img {
 }
 
 .ruler {
+  font-size: 0.8em;
   border-radius: 15px;
   border: 1.5px solid rgba(71, 74, 255);
   margin: 40px 0px 40px 0px;
   padding: 10px;
+  text-align: center;
 }
 
 .ruler-text {
@@ -135,7 +132,11 @@ img {
 }
 
 button {
-  padding: 10px 32px;
+  font-family: "Space mono", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 1em;
+  width: 100%;
+  padding: 12px 36px;
   border-radius: 5px;
   border: 0 solid;
   background-color: #ffffff;
